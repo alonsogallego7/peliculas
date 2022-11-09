@@ -6,8 +6,10 @@ import com.alonsogallego.peliculas_app.peliculas.domain.models.Pelicula
 
 class PeliculasMemLocalDataSource(private val dataStore: MemDataStore<Pelicula>) :
     PeliculaLocalDataSource {
-    override fun save(peliculaId: String, pelicula: Pelicula) {
-        dataStore.put(peliculaId, pelicula)
+    override fun save(peliculas: List<Pelicula>) {
+        peliculas.map {
+            dataStore.put(it.id, it)
+        }
     }
 
     override fun getPelicula(peliculaId: String): Pelicula? {
