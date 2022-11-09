@@ -7,8 +7,11 @@ import androidx.room.Query
 @Dao
 interface PeliculaDao {
     @Insert
-    fun save(peliculaId: Int)
+    fun save(peliculas: List<PeliculaEntity>)
 
-    @Query
-    fun getPelicula(peliculaId: Int)
+    @Query("SELECT * FROM $TABLE_NAME_PELICULA WHERE id = :peliculaId LIMIT 1")
+    fun getPelicula(peliculaId: String): PeliculaEntity?
+
+    @Query("SELECT * FROM $TABLE_NAME_PELICULA")
+    fun getPeliculas(): List<PeliculaEntity>
 }
