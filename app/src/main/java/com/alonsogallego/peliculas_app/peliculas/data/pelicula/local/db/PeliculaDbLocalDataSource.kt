@@ -5,14 +5,20 @@ import com.alonsogallego.peliculas_app.peliculas.domain.models.Pelicula
 
 class PeliculaDbLocalDataSource(private val dao: PeliculaDao) : PeliculaLocalDataSource {
     override fun save(peliculas: List<Pelicula>) {
-        dao.save(peliculas)
+        peliculas.forEach {
+            dao.save(it.toEntity())
+        }
     }
 
     override fun getPelicula(peliculaId: String): Pelicula? {
-        TODO("Not yet implemented")
+        return dao.getPelicula(peliculaId)?.toDomain()
     }
 
     override fun getPeliculas(): List<Pelicula> {
-        TODO("Not yet implemented")
+        val peliculas = mutableListOf<Pelicula>()
+        dao.getPeliculas().forEach {
+            peliculas.add(it.toDomain())
+        }
+        return peliculas
     }
 }

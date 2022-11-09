@@ -11,3 +11,13 @@ fun PeliculaEntity.toDomain() = Pelicula(
     this.year,
     this.poster,
 )
+
+fun Pelicula.toEntity() = PeliculaEntity(
+    this.id,
+    this.title,
+    this.pilot,
+    this.genre,
+    this.rating,
+    this.year,
+    this.poster,
+)
