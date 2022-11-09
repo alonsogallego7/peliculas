@@ -11,8 +11,10 @@ class PeliculaXmlLocalDataSource(private val sharedPref: SharedPreferences) :
     private val gson = Gson()
     private val edit = sharedPref.edit()
 
-    override fun save(peliculaId: String, pelicula: Pelicula) {
-        edit.putString(peliculaId, gson.toJson(pelicula, Pelicula::class.java))
+    override fun save(peliculas: List<Pelicula>) {
+        peliculas.forEach {
+            edit.putString(it.id, gson.toJson(it))
+        }
         edit.apply()
     }
 
