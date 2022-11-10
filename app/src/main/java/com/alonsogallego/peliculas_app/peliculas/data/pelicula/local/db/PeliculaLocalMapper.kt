@@ -9,7 +9,7 @@ fun PeliculaEntity.toDomain() = Pelicula(
     this.genre,
     this.rating,
     this.year,
-    this.poster,
+    this.poster
 )
 
 fun Pelicula.toEntity() = PeliculaEntity(
@@ -19,5 +19,5 @@ fun Pelicula.toEntity() = PeliculaEntity(
     this.genre,
     this.rating,
     this.year,
-    this.poster,
+    this.poster
 )
