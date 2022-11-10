@@ -5,9 +5,9 @@ import com.alonsogallego.peliculas_app.peliculas.domain.models.Pelicula
 fun PeliculaApiModel.toDomain() = Pelicula(
     this.id,
     this.title,
-    this.pilot,
+    this.plot,
     this.genre,
-    this.rating,
+    this.rating.toString(),
     this.year,
     this.poster
 )

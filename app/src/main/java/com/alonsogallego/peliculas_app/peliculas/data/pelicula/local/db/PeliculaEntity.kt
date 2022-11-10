@@ -10,7 +10,7 @@ const val TABLE_NAME_PELICULA = "pelicula"
 data class PeliculaEntity(
     @PrimaryKey val id: String,
     @ColumnInfo val title: String,
-    @ColumnInfo val pilot: String,
+    @ColumnInfo val plot: String,
     @ColumnInfo val genre: String,
     @ColumnInfo val rating: String,
     @ColumnInfo val year: String,
