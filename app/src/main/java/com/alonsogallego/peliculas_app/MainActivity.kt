@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        val peliculaRepository = PeliculaDataRepository(
+        /*val peliculaRepository = PeliculaDataRepository(
             PeliculaXmlLocalDataSource(this.getPreferences(MODE_PRIVATE)),
             PeliculaApiRemoteDataSource(ApiClient())
-        )
+        )**/
 
-        Thread {
-            Log.d("@dev", "Peliculas: ${peliculaRepository.getPeliculas()}")
-            Log.d("@dev", "Pelicula: ${peliculaRepository.getPelicula("avenger-endgame")}")
-        }
+        val peliculaRemote = PeliculaApiRemoteDataSource(ApiClient())
+
+        Log.d("@dev", "Peliculas: ${peliculaRemote.getPeliculas()}")
+        Log.d("@dev", "Pelicula: ${peliculaRemote.getPelicula("avenger-endgame")}")
     }
 }
