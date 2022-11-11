@@ -16,7 +16,7 @@ class ApiClient {
     fun createRetrofitClient() = Retrofit.Builder()
         .baseUrl(baseEndPoints)
         .addConverterFactory(GsonConverterFactory.create())
-        .build();
+        .build()
 
     fun buildApiEndPoints() = createRetrofitClient().create(ApiServices::class.java)
 

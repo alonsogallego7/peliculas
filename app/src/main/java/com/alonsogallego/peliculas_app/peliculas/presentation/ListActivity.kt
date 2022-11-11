@@ -8,6 +8,7 @@ import com.alonsogallego.peliculas_app.peliculas.data.ApiClient
 import com.alonsogallego.peliculas_app.peliculas.data.pelicula.PeliculaDataRepository
 import com.alonsogallego.peliculas_app.peliculas.data.pelicula.local.xml.PeliculaXmlLocalDataSource
 import com.alonsogallego.peliculas_app.peliculas.data.pelicula.remote.api.PeliculaApiRemoteDataSource
+import kotlin.concurrent.thread
 
 class ListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,8 +22,9 @@ class ListActivity : AppCompatActivity() {
             PeliculaXmlLocalDataSource(this.getPreferences(MODE_PRIVATE)),
             PeliculaApiRemoteDataSource(ApiClient())
         )
-
-        Log.d("@dev", "Peliculas: ${peliculaRepository.getPeliculas()}")
-        Log.d("@dev", "Pelicula: ${peliculaRepository.getPelicula("avenger-endgame")}")
+        thread {
+            Log.d("@dev", "Peliculas: ${peliculaRepository.getPeliculas()}")
+            Log.d("@dev", "Pelicula: ${peliculaRepository.getPelicula("avenger-endgame")}")
+        }
     }
 }
