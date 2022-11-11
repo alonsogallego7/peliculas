@@ -1,7 +1,9 @@
 package com.alonsogallego.peliculas_app.peliculas.data.pelicula
 
 import com.alonsogallego.peliculas_app.peliculas.data.pelicula.local.PeliculaLocalDataSource
+import com.alonsogallego.peliculas_app.peliculas.data.pelicula.local.xml.PeliculaXmlLocalDataSource
 import com.alonsogallego.peliculas_app.peliculas.data.pelicula.remote.PeliculaRemoteDataSource
+import com.alonsogallego.peliculas_app.peliculas.data.pelicula.remote.api.PeliculaApiRemoteDataSource
 import com.alonsogallego.peliculas_app.peliculas.domain.models.Pelicula
 import com.alonsogallego.peliculas_app.peliculas.domain.repositories.PeliculaRepository
 
