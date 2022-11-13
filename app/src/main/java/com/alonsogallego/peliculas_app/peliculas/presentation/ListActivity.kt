@@ -13,7 +13,7 @@ import kotlin.concurrent.thread
 class ListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+        setContentView(R.layout.view_item_peliculas_list)
         init()
     }
 
