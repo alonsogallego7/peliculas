@@ -11,7 +11,7 @@ class PeliculaDataRepository(
     val localSource: PeliculaLocalDataSource,
     val remoteSource: PeliculaRemoteDataSource
 ) : PeliculaRepository {
-    override fun getPelicula(peliculaId: String): Pelicula? {
+    override suspend fun getPelicula(peliculaId: String): Pelicula? {
         var pelicula = localSource.getPelicula(peliculaId)
         if (pelicula == null) {
             pelicula = remoteSource.getPelicula(peliculaId)
@@ -19,7 +19,7 @@ class PeliculaDataRepository(
         return pelicula
     }
 
-    override fun getPeliculas(): List<Pelicula> {
+    override suspend fun getPeliculas(): List<Pelicula> {
         var peliculas = localSource.getPeliculas()
         if (peliculas.isEmpty()) {
             peliculas = remoteSource.getPeliculas()
