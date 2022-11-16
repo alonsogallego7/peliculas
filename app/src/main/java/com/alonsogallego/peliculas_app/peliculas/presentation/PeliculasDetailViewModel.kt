@@ -4,11 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.alonsogallego.peliculas_app.peliculas.domain.use_cases.GetPeliculaDetailUseCase
-import com.alonsogallego.peliculas_app.peliculas.domain.use_cases.GetPeliculasFeedUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PeliculasDetailView(private val getPeliculaDetail: GetPeliculaDetailUseCase): ViewModel() {
+class PeliculasDetailViewModel(private val getPeliculaDetail: GetPeliculaDetailUseCase): ViewModel() {
 
     val peliculaDetailPublisher: MutableLiveData<PeliculaDetailUiState> by lazy {
         MutableLiveData<PeliculaDetailUiState>()
