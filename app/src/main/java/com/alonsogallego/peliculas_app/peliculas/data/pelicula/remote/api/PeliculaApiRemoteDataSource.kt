@@ -5,7 +5,7 @@ import com.alonsogallego.peliculas_app.peliculas.data.pelicula.remote.PeliculaRe
 import com.alonsogallego.peliculas_app.peliculas.domain.models.Pelicula
 
 class PeliculaApiRemoteDataSource(private val apiClient: ApiClient) : PeliculaRemoteDataSource {
-    override fun getPeliculas(): List<Pelicula> {
+    override suspend fun getPeliculas(): List<Pelicula> {
         val peliculas = mutableListOf<Pelicula>()
         apiClient.getPeliculas().map {
             peliculas.add(it.toDomain())
@@ -13,7 +13,7 @@ class PeliculaApiRemoteDataSource(private val apiClient: ApiClient) : PeliculaRe
         return peliculas
     }
 
-    override fun getPelicula(peliculaId: String): Pelicula? {
+    override suspend fun getPelicula(peliculaId: String): Pelicula? {
         return apiClient.getPelicula(peliculaId)?.toDomain()
     }
 }
