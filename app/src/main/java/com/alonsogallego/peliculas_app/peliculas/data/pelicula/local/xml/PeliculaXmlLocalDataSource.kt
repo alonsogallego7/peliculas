@@ -27,7 +27,7 @@ class PeliculaXmlLocalDataSource(private val sharedPref: SharedPreferences) :
     override fun getPeliculas(): List<Pelicula> {
         val peliculas = mutableListOf<Pelicula>()
         sharedPref.all.forEach {
-            peliculas.add(gson.fromJson(it.key, Pelicula::class.java))
+            peliculas.add(gson.fromJson(it.value as String, Pelicula::class.java))
         }
         return peliculas
     }
