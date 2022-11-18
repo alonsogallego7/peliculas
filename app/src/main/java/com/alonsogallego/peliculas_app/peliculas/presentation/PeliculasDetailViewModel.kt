@@ -18,7 +18,7 @@ class PeliculasDetailViewModel(private val getPeliculaDetail: GetPeliculaDetailU
 
         viewModelScope.launch(Dispatchers.IO) {
             val pelicula = getPeliculaDetail.execute(peliculaId)
-            peliculaDetailPublisher.postValue(PeliculaDetailUiState(true, pelicula))
+            peliculaDetailPublisher.postValue(PeliculaDetailUiState(false, pelicula))
         }
     }
 
