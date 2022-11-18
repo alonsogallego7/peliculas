@@ -24,7 +24,7 @@ class PeliculasDetailViewModel(private val getPeliculaDetail: GetPeliculaDetailU
 
     data class PeliculaDetailUiState(
         val isLoading: Boolean = false,
-        val peliculasFeed: GetPeliculaDetailUseCase.PeliculaDetail? = null
+        val peliculasDetail: GetPeliculaDetailUseCase.PeliculaDetail? = null
     )
 
 }
