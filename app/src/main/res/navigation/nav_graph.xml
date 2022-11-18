@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/peliculasFeed">
+
+    <fragment
+        android:id="@+id/peliculasFeed"
+        android:name="com.alonsogallego.peliculas_app.peliculas.presentation.PeliculasFeedFragment"
+        android:label="Peliculas"
+        tools:layout="@layout/fragment_peliculas_feed">
+
+        <action
+            android:id="@+id/action_peliculasfeed_to_peliculasdetail"
+            app:destination="@id/peliculasDetail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/peliculasDetail"
+        android:name="com.alonsogallego.peliculas_app.peliculas.presentation.PeliculasDetailFragment"
+        android:label="Peliculas Detail"
+        tools:layout="@layout/fragment_peliculas_detail">
+
+        <argument
+            android:name="peliculaId"
+            android:defaultValue="0"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

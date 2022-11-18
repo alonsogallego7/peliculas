@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Peliculas_app"
         tools:targetApi="31">
         <activity
-            android:name=".peliculas.presentation.ListActivity"
+            android:name=".peliculas.presentation.PeliculasFeedActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -30,6 +32,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
     }
 }
 
@@ -69,8 +75,19 @@ dependencies {
     //LiveData: Observer
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
 
-    //Corroutines
+    //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    //Skeleton
+    implementation 'com.faltenreich:skeletonlayout:4.0.0'
+
+    //Fragments
+    implementation("androidx.fragment:fragment-ktx:1.5.4")
+
+    //Navigation
+    def nav_version = "2.5.3"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
 
 
