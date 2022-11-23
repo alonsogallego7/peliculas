@@ -63,6 +63,15 @@ dependencies {
     //Realtime
     implementation 'com.google.firebase:firebase-database-ktx'
 
+    //ViewModel Scope
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
+    //LiveData: Observer
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+
+    //Corroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
 
 
 

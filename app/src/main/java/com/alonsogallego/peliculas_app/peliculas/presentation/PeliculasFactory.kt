@@ -12,6 +12,14 @@ import com.alonsogallego.peliculas_app.peliculas.domain.use_cases.GetPeliculaDet
 import com.alonsogallego.peliculas_app.peliculas.domain.use_cases.GetPeliculasFeedUseCase
 
 class PeliculasFactory {
+    fun getPeliculasViewModel(context: Context) = PeliculasFeedViewModel(
+        getPeliculasUseCase(context)
+    )
+
+    fun getPeliculaDetailViewModel(context: Context) = PeliculasDetailViewModel(
+        getPeliculaDetailUseCase(context)
+    )
+
     private fun getPeliculasUseCase(context: Context): GetPeliculasFeedUseCase {
         return GetPeliculasFeedUseCase(
             getPeliculasRepository(context)
