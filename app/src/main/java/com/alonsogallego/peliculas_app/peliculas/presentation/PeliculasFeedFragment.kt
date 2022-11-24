@@ -65,7 +65,7 @@ class PeliculasFeedFragment: Fragment() {
                 } else {
                     skeleton?.showOriginal()
                     peliculasAdapter.setOnClickItem { peliculaId ->
-                        navigateToSuperHeroDetail(peliculaId)
+                        navigateToPeliculaDetail(peliculaId)
                     }
                     peliculasAdapter.setDataItems(uiState.peliculasFeed)
                 }
@@ -73,7 +73,7 @@ class PeliculasFeedFragment: Fragment() {
         viewModel.peliculasFeedPublisher.observe(viewLifecycleOwner, peliculaFeedSubscriber)
     }
 
-    private fun navigateToSuperHeroDetail(peliculaId: String) {
+    private fun navigateToPeliculaDetail(peliculaId: String) {
         findNavController().navigate(
             PeliculasFeedFragmentDirections.actionPeliculasfeedToPeliculasdetail(peliculaId)
         )
