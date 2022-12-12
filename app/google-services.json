@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1030958242394",
+    "firebase_url": "https://peliculas-app-e032c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "peliculas-app-e032c",
+    "storage_bucket": "peliculas-app-e032c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030958242394:android:5e03cc3497eb7b68b79663",
+        "android_client_info": {
+          "package_name": "com.alonsogallego.peliculas_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030958242394-nnrb5s0ve941ahlo2793ga4vad0o74nb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGsXX12fqHloYYZitjf4z39Lyzn3Lc2Cs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030958242394-nnrb5s0ve941ahlo2793ga4vad0o74nb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
